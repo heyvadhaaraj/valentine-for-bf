@@ -4,32 +4,108 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>One Request 💌</title>
+
   <style>
-    body { font-family: Arial, sans-serif; background:#0b1020; color:#fff; display:flex; min-height:100vh; margin:0; align-items:center; justify-content:center; }
-    .card { width:min(520px, 92vw); background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); padding:28px; border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,0.35); }
-    h1 { margin:0 0 10px; font-size:28px; }
-    p { opacity:0.9; line-height:1.5; }
-    .btns { display:flex; gap:12px; margin-top:18px; flex-wrap:wrap; }
-    button { border:0; padding:12px 16px; border-radius:12px; font-size:16px; cursor:pointer; }
-    #yes { background:#22c55e; color:#07130b; font-weight:700; }
-    #no { background:#ef4444; color:#1a0606; font-weight:700; }
-    .tiny { margin-top:18px; font-size:12px; opacity:0.7; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #0b1020;
+      color: #fff;
+      display: flex;
+      min-height: 100vh;
+      margin: 0;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      width: min(520px, 92vw);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 28px;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      text-align: center;
+    }
+
+    .photo {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid rgba(255,255,255,0.6);
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 28px;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin-top: 10px;
+    }
+
+    p {
+      opacity: 0.9;
+      line-height: 1.5;
+    }
+
+    .btns {
+      display: flex;
+      gap: 12px;
+      margin-top: 18px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: 0;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #yes {
+      background: #22c55e;
+      color: #07130b;
+      font-weight: 700;
+    }
+
+    #no {
+      background: #ef4444;
+      color: #1a0606;
+      font-weight: 700;
+    }
+
+    .tiny {
+      margin-top: 18px;
+      font-size: 12px;
+      opacity: 0.7;
+    }
   </style>
 </head>
+
 <body>
-  <div class="card">
+  <div class="card" id="card">
+
+    <!-- PHOTO -->
+    <img src="us.jpg" alt="Us ❤️" class="photo">
+    <p style="opacity:0.8;">Us, always ❤️</p>
+
     <h1>🔐 Request Approval Needed</h1>
+
     <p>
       Request Type: <b>Valentine Access</b><br/>
-      Requestor: <b>Your Girlfriend</b> 💕<br/><br/>
-      Please confirm:
+      Requestor: <b>HEYVADHAA NUTHANAN</b> 💕
     </p>
 
-    <h2 style="margin:10px 0 0; font-size:22px;">Will you be my Valentine? ❤️</h2>
+    <h2>Will you be my Valentine? ❤️</h2>
 
     <div class="btns">
-      <button id="yes">Approve ✅</button>
-      <button id="no">Reject ❌</button>
+      <button id="YES">Approve ✅</button>
+      <button id="NOPE! I WANT TO SPOIL MY LIFE">Reject ❌</button>
     </div>
 
     <p class="tiny">Security Notice: Rejecting may trigger cute consequences.</p>
@@ -38,21 +114,25 @@
   <script>
     const yes = document.getElementById("yes");
     const no = document.getElementById("no");
+    const card = document.getElementById("card");
 
     yes.addEventListener("click", () => {
-      document.querySelector(".card").innerHTML = `
+      card.innerHTML = `
+        <img src="us.jpg" alt="Us ❤️" class="photo">
         <h1>✅ Access Granted</h1>
         <p>You have successfully approved the request.</p>
-        <h2 style="margin:10px 0 0; font-size:22px;">Happy Valentine’s, baby ❤️</h2>
-        <p style="margin-top:14px; opacity:0.9;">
-          Reward unlocked: <b>Level 1 – Strength Upgrade 💪</b><br/>
-          (Details will be delivered soon 😌)
+        <h2>Happy Valentine’s, my love ❤️</h2>
+        <p style="margin-top:14px;">
+          🎁 Reward unlocked:<br>
+          <b>Level 1 – Strength Upgrade 💪</b><br>
+          (Delivery soon 😌)
         </p>
       `;
+      console.log("She really loves you ❤️");
     });
 
     no.addEventListener("click", () => {
-      alert("❌ Action not permitted. Please choose Approve 😌");
+      alert("Nice try 😌 But you only have one correct answer.");
     });
   </script>
 </body>
